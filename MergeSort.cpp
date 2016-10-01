@@ -67,7 +67,7 @@ int main()
 	cout << "\n\nStored Data in Array:- ";
 	for (i = 0; i<nokeys; i++)
 	{
-		cout << a[i];
+		cout << a[i] << endl;
 	}
 
     mergesort(a, 0, nokeys-1);

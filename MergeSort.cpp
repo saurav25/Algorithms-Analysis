@@ -1,11 +1,13 @@
 #include <iostream>
 using namespace std;
 
+int mscount, mergep;
 
 void merge(int *,int, int , int );
 void mergesort(int *a, int low, int high)
 {
     int mid;
+    ++mscount;
     if (low < high)
     {
         mid=(low+high)/2;
@@ -52,6 +54,8 @@ void merge(int *a, int low, int high, int mid)
     {
         a[i] = c[i];
     }
+    ++mergep;
+
 }
 int main()
 {
@@ -64,15 +68,19 @@ int main()
 	{
 		cin >> a[i];
 	}
-	cout << "\n\nStored Data in Array:- ";
+	cout << "\nStored Data in Array:- ";
 	for (i = 0; i<nokeys; i++)
 	{
-		cout << a[i] << endl;
+		cout << a[i] << " " ;
 	}
 
     mergesort(a, 0, nokeys-1);
+    cout << "\nMergeSort calling:" << mscount;
+    cout << "\nMerge Procedure ran:" << mergep;
+    cout << "\nSorted:- " << " " ;
     for (int i = 0; i < nokeys; i++)
-		cout << a[i] << endl;
+		cout << a[i] << " " ;
+    cout << endl;
 
     return 0;
 
